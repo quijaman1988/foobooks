@@ -1,5 +1,7 @@
 <?php
 
+
+
 Route::group(['middleware' => ['web']], function () {
 
   Route::get('/', function () {
@@ -13,10 +15,11 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('/books/{id}','BookController@getShow');
 
   Route::get('/practice', function (){
-    echo 'app.url: ' .config('app.url');
-    echo "<br>  ";
-    echo config('app.env');
-    //return 'practice';
+
+    $random = new Random();
+   return $random->getRandomString(25);
+
+   //return 'Practice';
   });
 
 });

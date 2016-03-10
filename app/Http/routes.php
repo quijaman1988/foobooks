@@ -12,4 +12,11 @@ Route::group(['middleware' => ['web']], function () {
   Route::post('/books/create','BookController@postCreate');
   Route::get('/books/{id}','BookController@getShow');
 
+  Route::get('/practice', function (){
+    echo 'app.url: ' .config('app.url');
+    echo "<br>  ";
+    echo config('app.env');
+    //return 'practice';
+  });
+
 });
